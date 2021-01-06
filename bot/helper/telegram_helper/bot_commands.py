@@ -7,7 +7,7 @@ class _BotCommands:
         self.CancelMirror = 'cancel1'
         self.CancelAllCommand = 'cancelall1'
         self.ListCommand = 'list1'
-        self.StatusCommand = 'status'
+        self.StatusCommand = 'status1'
         self.AuthorizeCommand = 'authorize1'
         self.UnAuthorizeCommand = 'unauthorize1'
         self.PingCommand = 'ping1'
