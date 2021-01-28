@@ -7,6 +7,8 @@ import aria2p
 import telegram.ext as tg
 from dotenv import load_dotenv
 import socket
+import faulthandler
+faulthandler.enable()
 
 socket.setdefaulttimeout(600)
 
@@ -64,6 +66,14 @@ if os.path.exists('authorized_chats.txt'):
         for line in lines:
             #    LOGGER.info(line.split())
             AUTHORIZED_CHATS.add(int(line.split()[0]))
+try:
+    achats = getConfig('AUTHORIZED_CHATS')
+    achats = achats.split(" ")
+    for chats in achats:
+        AUTHORIZED_CHATS.add(int(chats))
+except:
+    pass
+
 try:
     BOT_TOKEN = getConfig('BOT_TOKEN')
     parent_id = getConfig('GDRIVE_FOLDER_ID')
